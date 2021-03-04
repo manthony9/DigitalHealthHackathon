@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: -apple-system, MONTSERRAT, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  min-height: 50vh;
+  max-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.page-footer {
+  background-color: #5ed1eb !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, MONTSERRAT, Consolas,
+    "Courier New", monospace;
+}
+
+#butt {
+  background-color: #5ed1eb !important;
+}
