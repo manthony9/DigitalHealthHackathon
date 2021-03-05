@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
 const app = express();
+
 var path = require("path");
 // Bodyparser middleware
 app.use(
@@ -13,12 +14,14 @@ app.use(
 );
 
 // Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, "../client/build")));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 // All remaining requests return the React app, so it can handle routing.
 app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
+
+// All remaining requests return the React app, so it can handle routing.
 
 app.use(bodyParser.json());
 // DB Config
