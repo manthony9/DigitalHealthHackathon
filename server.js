@@ -13,10 +13,11 @@ app.use(
 );
 
 // Priority serve any static files.
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+// All remaining requests return the React app, so it can handle routing.
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
 app.use(bodyParser.json());
