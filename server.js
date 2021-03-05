@@ -12,8 +12,10 @@ app.use(
   })
 );
 
-app.use(express.static("build"));
-app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
+// All remaining requests return the React app, so it can handle routing.
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
 
 app.use(bodyParser.json());
 // DB Config
